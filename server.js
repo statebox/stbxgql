@@ -4,7 +4,7 @@ import {apolloExpress, graphiqlExpress} from 'apollo-server'
 
 import {makeExecutableSchema} from 'graphql-tools'
 
-const PORT = 57473
+const PORT = 3000
 
 var app = express()
 
@@ -24,4 +24,7 @@ app.use('/graphiql', graphiqlExpress({
 	endpointURL: '/graphql'
 }))
 
-app.listen(PORT)
+app.listen(PORT, () => {
+	console.log('API http://localhost:' + PORT + '/graphql')
+	console.log('GraphIQL http://localhost:' + PORT + '/graphiql')
+})
